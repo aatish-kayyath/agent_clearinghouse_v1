@@ -18,7 +18,7 @@ from __future__ import annotations
 
 import uuid
 from datetime import UTC, datetime
-from typing import TYPE_CHECKING
+from decimal import Decimal  # noqa: TC003 - needed at runtime by SQLAlchemy Mapped[]
 
 from sqlalchemy import (
     Boolean,
@@ -34,9 +34,6 @@ from sqlalchemy import (
 )
 from sqlalchemy.dialects.postgresql import JSONB, UUID
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
-
-if TYPE_CHECKING:
-    from decimal import Decimal
 
 
 class Base(DeclarativeBase):

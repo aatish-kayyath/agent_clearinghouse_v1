@@ -7,14 +7,11 @@ boundaries between the API and database layers.
 
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+import uuid  # noqa: TC003 - needed at runtime by Pydantic
+from datetime import datetime  # noqa: TC003 - needed at runtime by Pydantic
+from decimal import Decimal  # noqa: TC003 - needed at runtime by Pydantic
 
 from pydantic import BaseModel, ConfigDict, Field
-
-if TYPE_CHECKING:
-    import uuid
-    from datetime import datetime
-    from decimal import Decimal
 
 # ---------------------------------------------------------------------------
 # Request Schemas
